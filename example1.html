@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>예제 실습1</title>
+
+</head>
+
+<body>
+  <form id="username" >
+    <input type="text" name="username" placeholder="사용자 이름을 입력하세요" required />
+    <input type="submit" value="전송"/>
+  </form>
+
+</body>
+</html>
+
+<script>
+  const form = document.querySelector("#username");
+  form.addEventListener("submit" , function(event) {
+    event.preventDefault(); // 기본 동작 방지
+
+    const usernameInput = form.elements.username;
+    const username = usernameInput.value.trim();
+
+    if (username) {
+      alert(`사용자 이름: ${username}`);
+      usernameInput.value = ""; // 입력 필드 초기화
+    } else {
+      alert("사용자 이름을 입력하세요.");
+    }
+  });
+  
+</script>
