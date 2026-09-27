@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form 연습 - Checkout</title>
+</head>
+<body>
+
+  <header>
+    <h1>Checkout form</h1>
+    <p>Bootstrap Checkout 예제를 HTML Form 구조 중심으로 Clone Coding한 페이지입니다.</p>
+    <p><a href="index.html">← 목록으로</a></p>
+  </header>
+
+  <main>
+    
+    <aside>
+      <h2>Your cart <span>(3)</span></h2>
+      <ul>
+        <li>Product name - Brief description <span>$12</span></li>
+        <li>Second product - Brief description <span>$8</span></li>
+        <li>Third item - Brief description <span>$5</span></li>
+        <li>Promo code - EXAMPLECODE <span>−$5</span></li>
+        <li><strong>Total (USD) <span>$20</span></strong></li>
+      </ul>
+
+      <form id="promoForm">
+        <label for="promo">Promo code</label>
+        <input type="text" id="promo" name="promo" placeholder="Promo code" />
+        <button type="submit">Redeem</button>
+      </form>
+    </aside>
+
+    <!-- 주문서 (원본의 Billing address 영역) -->
+    <form id="userForm" action="#" method="post">
+
+      <fieldset>
+        <legend>Billing address</legend>
+
+        <p>
+          <label for="firstName">First name</label><br />
+          <input type="text" id="firstName" name="firstName" placeholder="길동" />
+        </p>
+
+        <p>
+          <label for="lastName">Last name</label><br />
+          <input type="text" id="lastName" name="lastName" placeholder="홍" />
+        </p>
+
+        <p>
+          <label for="username">Username</label><br />
+          <span>@</span>
+          <input type="text" id="username" name="username" placeholder="Username" />
+        </p>
+
+        <p>
+          <label for="email">Email <small>(Optional)</small></label><br />
+          <input type="email" id="email" name="email" placeholder="you@example.com" />
+        </p>
+
+        <p>
+          <label for="password">Password</label><br />
+          <input type="password" id="password" name="password" placeholder="6자 이상" />
+        </p>
+
+        <p>
+          <label for="address">Address</label><br />
+          <input type="text" id="address" name="address" placeholder="1234 Main St" />
+        </p>
+
+        <p>
+          <label for="address2">Address 2 <small>(Optional)</small></label><br />
+          <input type="text" id="address2" name="address2" placeholder="Apartment or suite" />
+        </p>
+
+        <p>
+          <label for="country">Country</label><br />
+          <select id="country" name="country">
+            <option value="">Choose...</option>
+            <optgroup label="Asia">
+              <option value="KR">대한민국</option>
+              <option value="JP">일본</option>
+              <option value="CN">중국</option>
+            </optgroup>
+            <optgroup label="America">
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+            </optgroup>
+          </select>
+        </p>
+
+        <p>
+          <label for="city">City</label><br />
+          <input type="text" id="city" name="city" list="cityList" placeholder="도시를 입력하거나 선택하세요" />
+          <datalist id="cityList">
+            <option value="서울"></option>
+            <option value="부산"></option>
+            <option value="대구"></option>
+            <option value="포항"></option>
+            <option value="New York"></option>
+          </datalist>
+        </p>
+
+        <p>
+          <label for="zip">Zip</label><br />
+          <input type="text" id="zip" name="zip" placeholder="12345" />
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Options</legend>
+
+        <p>
+          <input type="checkbox" id="sameAddress" name="sameAddress" />
+          <label for="sameAddress">Shipping address is the same as my billing address</label>
+        </p>
+
+        <p>
+          <input type="checkbox" id="saveInfo" name="saveInfo" />
+          <label for="saveInfo">Save this information for next time</label>
+        </p>
+
+        <p>
+          <label for="deliveryDate">희망 배송일</label><br />
+          <input type="date" id="deliveryDate" name="deliveryDate" />
+        </p>
+
+        <p>
+          <label for="wrapColor">포장지 색상</label><br />
+          <input type="color" id="wrapColor" name="wrapColor" value="#0d6efd" />
+        </p>
+
+        <p>
+          <label for="memo">배송 요청사항</label><br />
+          <textarea id="memo" name="memo" rows="4" cols="40" placeholder="문 앞에 놓아주세요."></textarea>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Payment</legend>
+
+        <p>
+          <input type="radio" id="credit" name="paymentMethod" value="credit" checked />
+          <label for="credit">Credit card</label>
+          <input type="radio" id="debit" name="paymentMethod" value="debit" />
+          <label for="debit">Debit card</label>
+          <input type="radio" id="paypal" name="paymentMethod" value="paypal" />
+          <label for="paypal">PayPal</label>
+        </p>
+
+        <p>
+          <label for="ccName">Name on card</label><br />
+          <input type="text" id="ccName" name="ccName" />
+          <br /><small>Full name as displayed on card</small>
+        </p>
+
+        <p>
+          <label for="ccNumber">Credit card number</label><br />
+          <input type="text" id="ccNumber" name="ccNumber" />
+        </p>
+
+        <p>
+          <label for="ccExpiration">Expiration</label><br />
+          <input type="text" id="ccExpiration" name="ccExpiration" placeholder="MM/YY" />
+        </p>
+
+        <p>
+          <label for="ccCvv">CVV</label><br />
+          <input type="text" id="ccCvv" name="ccCvv" />
+        </p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Continue to checkout</button>
+        <button type="reset">초기화</button>
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    <p>원본: <a href="https://getbootstrap.com/docs/5.2/examples/checkout/" target="_blank">https://getbootstrap.com/docs/5.2/examples/checkout/</a></p>
+  </footer>
+</body>
+</html>
